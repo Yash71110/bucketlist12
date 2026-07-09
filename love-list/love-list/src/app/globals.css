@@ -1,0 +1,61 @@
+@import "tailwindcss";
+
+/* Self-hosted fonts (npm packages, no external font-fetch at runtime) */
+@import "@fontsource/fredoka/500.css";
+@import "@fontsource/fredoka/600.css";
+@import "@fontsource/fredoka/700.css";
+@import "@fontsource/nunito/400.css";
+@import "@fontsource/nunito/600.css";
+@import "@fontsource/nunito/800.css";
+@import "@fontsource/jetbrains-mono/500.css";
+
+:root {
+  /* ---- Palette: "plush locket" ----
+     Deliberately not the cliché cream+terracotta or near-black+neon combos.
+     Warm blush base, candy-pink primary, periwinkle secondary,
+     meadow-green for growth/success, sunbeam for highlights/XP. */
+  --blush: #fff3ee;
+  --blush-deep: #ffe4da;
+  --ink: #3a2a34;
+  --ink-soft: #7a6772;
+  --candy: #ff6f91;
+  --candy-deep: #e85577;
+  --periwinkle: #7c83fd;
+  --meadow: #4fb286;
+  --sunbeam: #ffc857;
+
+  --font-display: "Fredoka", ui-rounded, system-ui, sans-serif;
+  --font-body: "Nunito", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+}
+
+@theme inline {
+  --color-blush: var(--blush);
+  --color-blush-deep: var(--blush-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-candy: var(--candy);
+  --color-candy-deep: var(--candy-deep);
+  --color-periwinkle: var(--periwinkle);
+  --color-meadow: var(--meadow);
+  --color-sunbeam: var(--sunbeam);
+
+  --font-display: var(--font-display);
+  --font-body: var(--font-body);
+  --font-mono: var(--font-mono);
+}
+
+body {
+  background: var(--blush);
+  color: var(--ink);
+  font-family: var(--font-body);
+}
+
+/* Respect reduced-motion preferences app-wide */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
